@@ -1,0 +1,6 @@
+.idea
+
+apache/src/data/*
+nginx/src/data/*
+TIG/data/grafana/*
+TIG/data/influxdb/*

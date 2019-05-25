@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  apache-php:
+    image: webdevops/php-apache:7.3
+    restart: always
+    container_name: apache-php
+    ports:
+      - 81:80
+    networks:
+      custom_network:
+    environment:
+      - WEB_DOCUMENT_ROOT=/app
+      - WEB_DOCUMENT_INDEX=index.php
+    volumes:
+      - ./src:/app
+      - ./src/httpd/status.conf:/etc/apache2/mods-enabled/status.conf
+
+  db:
+    image: mysql:5.7
+    container_name: apache-mysql
+    ports:
+      - 3307:3306
+    networks:
+      custom_network:
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=lesson_2
+      - MYSQL_USER=lesson_2
+      - MYSQL_PASSWORD=lesson_2
+    volumes:
+      - ./src/data:/var/lib/mysql
+      - ./src/databases:/docker-entrypoint-initdb.d
+
+networks:
+  custom_network:
+    external: true
