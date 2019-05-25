@@ -15,3 +15,7 @@ To stop containers
 ## NGINX
 ![Nginx metrics](/image/nginx_metrics.png)
 ![Nginx terminal metrics](/image/nginx_terminal.png)
+
+## Docker
+![Docker metrics 1](/image/docker_metrics_1.png)
+![Docker metrics 2](/image/docker_metrics_2.png)
