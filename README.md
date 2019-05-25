@@ -1,6 +1,6 @@
 # Telegraf, InfluxDB, Grafana
 
-##Installation
+## Installation
 To configure containers
 > bash run.sh
 
